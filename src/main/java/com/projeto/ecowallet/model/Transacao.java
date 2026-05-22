@@ -1,0 +1,25 @@
+package com.projeto.ecowallet.model;
+
+import java.time.LocalDate;
+
+public abstract class Transacao {
+    private String descricao;
+    private double valor;
+    private LocalDate data;
+
+    public Transacao(String descricao, double valor, LocalDate data){
+        this.descricao = descricao;
+        this.valor = valor;
+        this.data = data;
+    }
+    public String getDescricao(){
+        return descricao;
+    }
+    public double getValor(){
+        return valor;
+    }
+    public LocalDate getData(){
+        return data;
+    }
+    public abstract double getValorParaSaldo();
+}
