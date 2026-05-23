@@ -9,9 +9,11 @@ public class GerenciadorFinancas {
     public GerenciadorFinancas(){
         this.transacoes = new ArrayList<>();
     }
+
     public void adicionarTransacao(Transacao transacao){
         transacoes.add(transacao);
     }
+
     public double calcularSaldo(){
         double saldo = 0;
 
