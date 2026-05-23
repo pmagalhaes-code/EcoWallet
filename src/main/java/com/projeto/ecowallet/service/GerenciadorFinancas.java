@@ -1,4 +1,6 @@
-package com.projeto.ecowallet.model;
+package com.projeto.ecowallet.service;
+import com.projeto.ecowallet.model.Transacao;
+
 import java.util.ArrayList;
 import java.util.List;
 

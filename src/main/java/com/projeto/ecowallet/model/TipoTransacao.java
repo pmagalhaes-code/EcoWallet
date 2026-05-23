@@ -1,4 +1,6 @@
 package com.projeto.ecowallet.model;
 
-public class TipoTransacao {
+public enum TipoTransacao {
+    RECEITA,
+    DESPESA
 }

@@ -7,19 +7,23 @@ public abstract class Transacao {
     private double valor;
     private LocalDate data;
 
-    public Transacao(String descricao, double valor, LocalDate data){
+    public Transacao(String descricao, double valor, LocalDate data) {
         this.descricao = descricao;
         this.valor = valor;
         this.data = data;
     }
-    public String getDescricao(){
+
+    public String getDescricao() {
         return descricao;
     }
-    public double getValor(){
+
+    public double getValor() {
         return valor;
     }
-    public LocalDate getData(){
+
+    public LocalDate getData() {
         return data;
     }
+
     public abstract double getValorParaSaldo();
 }
