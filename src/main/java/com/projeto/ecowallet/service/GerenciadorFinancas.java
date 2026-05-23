@@ -1,31 +1,36 @@
 package com.projeto.ecowallet.service;
-import com.projeto.ecowallet.model.Transacao;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.projeto.ecowallet.model.Transacao;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class GerenciadorFinancas {
 
-    private List<Transacao> transacoes;
+    private final ObservableList<Transacao> transacoes;
 
-    public GerenciadorFinancas(){
-        this.transacoes = new ArrayList<>();
+    public GerenciadorFinancas() {
+        this.transacoes = FXCollections.observableArrayList();
     }
 
-    public void adicionarTransacao(Transacao transacao){
+    public void adicionarTransacao(Transacao transacao) {
         transacoes.add(transacao);
     }
 
-    public double calcularSaldo(){
-        double saldo = 0;
-
-        for (Transacao t : transacoes){
-            saldo += t.getValorParaSaldo();
-        }
-        return saldo;
+    public void removerTransacao(Transacao transacao) {
+        transacoes.remove(transacao);
     }
 
-    public List<Transacao> getTransacoes() {
+    public ObservableList<Transacao> getTransacoes() {
         return transacoes;
+    }
+
+    public double calcularSaldo() {
+        double saldo = 0;
+
+        for (Transacao t : transacoes) {
+            saldo += t.getValorParaSaldo();
+        }
+
+        return saldo;
     }
 }
