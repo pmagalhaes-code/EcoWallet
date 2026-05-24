@@ -27,13 +27,5 @@ public abstract class Transacao {
         return data;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public TipoTransacao getTipo() {
-        return tipo;
-    }
-
     public abstract double getValorParaSaldo();
 }
