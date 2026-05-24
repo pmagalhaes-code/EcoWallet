@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.projeto.ecowallet.controller.MainController">
+
+    <children>
+
+        <VBox spacing="20.0"
+              AnchorPane.topAnchor="20.0"
+              AnchorPane.leftAnchor="20.0"
+              AnchorPane.rightAnchor="20.0"
+              AnchorPane.bottomAnchor="20.0">
+
+            <!-- TÍTULO -->
+            <Label text="EcoWallet"
+                   style="-fx-font-size: 34px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #1E3A5F;" />
+
+            <!-- FORMULÁRIO -->
+            <HBox spacing="12">
+
+                <VBox spacing="5">
+                    <Label text="Descrição"/>
+                    <TextField fx:id="txtDescricao"
+                               prefWidth="220"
+                               promptText="Digite a descrição"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Valor"/>
+                    <TextField fx:id="txtValor"
+                               prefWidth="150"
+                               promptText="0.00"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Tipo"/>
+                    <ComboBox fx:id="cbTipo"
+                              prefWidth="170"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Categoria"/>
+                    <ComboBox fx:id="cbCategoria"
+                              prefWidth="180"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Data"/>
+                    <DatePicker fx:id="dpData"
+                                prefWidth="170"/>
+                </VBox>
+
+                <VBox alignment="BOTTOM_LEFT">
+                    <Button text="Adicionar"
+                            prefWidth="120"
+                            onAction="#adicionarTransacao"
+                            style="-fx-background-color: #2E8B57;
+                                   -fx-text-fill: white;
+                                   -fx-font-weight: bold;"/>
+                </VBox>
+
+            </HBox>
+
+            <!-- LINHA -->
+            <Separator />
+
+            <!-- SALDO -->
+            <Label fx:id="lblSaldo"
+                   text="Saldo Total: R$ 500,00"
+                   style="-fx-font-size: 30px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #1E3A5F;" />
+
+            <!-- TABELA -->
+            <TableView fx:id="tabelaTransacoes"
+                       VBox.vgrow="ALWAYS">
+
+                <columns>
+
+                    <TableColumn fx:id="colDescricao"
+                                 text="Descrição"
+                                 prefWidth="350"/>
+
+                    <TableColumn fx:id="colValor"
+                                 text="Valor (R$)"
+                                 prefWidth="170"/>
+
+                    <TableColumn fx:id="colData"
+                                 text="Data"
+                                 prefWidth="200"/>
+
+                    <TableColumn fx:id="colTipo"
+                                 text="Tipo"
+                                 prefWidth="150"/>
+
+                    <TableColumn fx:id="colCategoria"
+                                 text="Categoria"
+                                 prefWidth="200"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+
+    </children>
+</AnchorPane>

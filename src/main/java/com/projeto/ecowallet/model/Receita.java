@@ -13,5 +13,4 @@ public class Receita extends Transacao {
         return getValor();
     }
 
-
 }

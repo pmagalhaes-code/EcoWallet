@@ -1,9 +1,6 @@
 package com.projeto.ecowallet.factory;
 
-import com.projeto.ecowallet.model.Despesa;
-import com.projeto.ecowallet.model.Receita;
-import com.projeto.ecowallet.model.TipoTransacao;
-import com.projeto.ecowallet.model.Transacao;
+import com.projeto.ecowallet.model.*;
 
 import java.time.LocalDate;
 
