@@ -14,7 +14,7 @@ public class TransacaoFactory {
             case RECEITA:
                 return new Receita(descricao, valor, data, tipo, categoria);
             case DESPESA:
-                return new Despesa(descricao, valor, data);
+                return new Despesa(descricao, valor, data, tipo, categoria);
             default:
                 throw new IllegalArgumentException("Tipo de transação inválido");
         }
