@@ -9,9 +9,9 @@ public class TransacaoFactory {
 
         switch (tipo) {
             case RECEITA:
-                return new Receita(descricao, valor, data, tipo, categoria);
+                return new Receita(descricao, valor, data, categoria);
             case DESPESA:
-                return new Despesa(descricao, valor, data, tipo, categoria);
+                return new Despesa(descricao, valor, data, categoria);
             default:
                 throw new IllegalArgumentException("Tipo de transação inválido");
         }
