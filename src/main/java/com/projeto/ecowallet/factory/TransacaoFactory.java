@@ -12,7 +12,7 @@ public class TransacaoFactory {
 
         switch (tipo) {
             case RECEITA:
-                return  new Receita(descricao, valor, data);
+                return new Receita(descricao, valor, data, tipo, categoria);
             case DESPESA:
                 return new Despesa(descricao, valor, data);
             default:
