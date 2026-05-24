@@ -8,7 +8,7 @@ import com.projeto.ecowallet.model.Transacao;
 import java.time.LocalDate;
 
 public class TransacaoFactory {
-    public static Transacao criarTransacao(TipoTransacao tipo, String descricao, double valor, LocalDate data) {
+    public static Transacao criarTransacao(String descricao, double valor, LocalDate data, TipoTransacao tipo,  Categoria categoria) {
 
         switch (tipo) {
             case RECEITA:
