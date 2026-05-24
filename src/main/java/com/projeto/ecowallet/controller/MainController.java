@@ -92,7 +92,8 @@ public class MainController {
 
         try {
 
-            String descricao = txtDescricao.getText();
+            String descricao =
+                    txtDescricao.getText();
 
             double valor =
                     Double.parseDouble(
@@ -137,6 +138,7 @@ public class MainController {
     private void atualizarSaldo() {
 
         lblSaldo.setText(
+
                 String.format(
                         "Saldo Total: R$ %.2f",
                         gerenciador.calcularSaldo()
@@ -147,15 +149,18 @@ public class MainController {
     private void limparCampos() {
 
         txtDescricao.clear();
+
         txtValor.clear();
 
         cbTipo.setValue(null);
+
         cbCategoria.setValue(null);
 
         dpData.setValue(null);
     }
 
-    private void mostrarAlerta(String mensagem) {
+    private void mostrarAlerta(
+            String mensagem) {
 
         Alert alert =
                 new Alert(Alert.AlertType.WARNING);
