@@ -1,8 +1,5 @@
 package com.projeto.ecowallet.model;
 
-import com.projeto.ecowallet.model.Categoria;
-import com.projeto.ecowallet.model.TipoTransacao;
-
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -13,12 +10,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         include = JsonTypeInfo.As.PROPERTY,
         property = "tipoClasse"
 )
-
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Receita.class, name = "RECEITA"),
         @JsonSubTypes.Type(value = Despesa.class, name = "DESPESA")
 })
-
 public abstract class Transacao {
 
     private String descricao;
@@ -27,15 +22,11 @@ public abstract class Transacao {
     private TipoTransacao tipo;
     private Categoria categoria;
 
-    public Transacao() {
+    // Construtor vazio necessário para o Jackson desserializar
+    protected Transacao() {
     }
 
-    public Transacao(String descricao,
-                     double valor,
-                     LocalDate data,
-                     TipoTransacao tipo,
-                     Categoria categoria) {
-
+    public Transacao(String descricao, double valor, LocalDate data, TipoTransacao tipo, Categoria categoria) {
         this.descricao = descricao;
         this.valor = valor;
         this.data = data;
@@ -43,25 +34,11 @@ public abstract class Transacao {
         this.categoria = categoria;
     }
 
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public double getValor() {
-        return valor;
-    }
-
-    public LocalDate getData() {
-        return data;
-    }
-
-    public TipoTransacao getTipo() {
-        return tipo;
-    }
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
+    public String getDescricao() { return descricao; }
+    public double getValor()     { return valor; }
+    public LocalDate getData()   { return data; }
+    public TipoTransacao getTipo() { return tipo; }
+    public Categoria getCategoria() { return categoria; }
 
     public abstract double getValorParaSaldo();
 }
